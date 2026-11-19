@@ -6,9 +6,19 @@ const App = () => {
 const [number, setNumbers] = useState<number[]>([5,11,16,23,32])
 
 const changeNumber = () => {
-  setNumbers(
-      [number[0],2,3,4,5,]
-  )
+  const newNumbers: number[] = [
+  ]
+
+  while(newNumbers.length < 5) {
+    const max = 36
+    const min = 5
+    const num:number = Math.floor(Math.random() * (max - min + 1)) + min
+    if (!newNumbers.includes(num)) {
+      newNumbers.push(num);
+    }
+  }
+  newNumbers.sort((a, b) => a - b)
+  setNumbers(newNumbers)
 }
   return (
       <div>

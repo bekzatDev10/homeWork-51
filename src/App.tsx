@@ -1,18 +1,26 @@
 import './App.css'
-import './randomNumbers/RandomNumbers.tsx'
-import RandomNumbers from "./randomNumbers/RandomNumbers.tsx";
+import RandomNumbers from "./randomNumbers/RandomNumbers.tsx"
+import {useState} from "react"
 
-function App() {
+const App = () => {
+const [number, setNumbers] = useState<number[]>([5,11,16,23,32])
 
-  return (
-      <div>
-        <RandomNumbers number={5} />
-        <RandomNumbers number={30} />
-        <RandomNumbers number={133} />
-        <RandomNumbers number={532} />
-        <RandomNumbers number={58757} />
-      </div>
+const changeNumber = () => {
+  setNumbers(
+      [number[0],2,3,4,5,]
   )
 }
+  return (
+      <div>
+        <RandomNumbers number={number[0]} />
+        <RandomNumbers number={number[1]} />
+        <RandomNumbers number={number[2]} />
+        <RandomNumbers number={number[3]} />
+        <RandomNumbers number={number[4]} />
+        <button onClick={changeNumber}>Change</button>
+
+      </div>
+  )
+};
 
 export default App

@@ -27,7 +27,7 @@ const changeNumber = () => {
         <RandomNumbers number={number[2]} />
         <RandomNumbers number={number[3]} />
         <RandomNumbers number={number[4]} />
-        <button onClick={changeNumber}>Change</button>
+        <button onClick={changeNumber} className='change-button'>New Numbers</button>
 
       </div>
   )
